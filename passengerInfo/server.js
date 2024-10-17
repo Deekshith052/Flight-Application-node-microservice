@@ -29,7 +29,7 @@ app.get('/passengers', (req,res) => {
 app.post('/passengers', (req, res) => {
     const {id, name, email, flightId } = req.body;
     const sql = 'INSERT INTO passengers VALUES (?, ?, ?, ?)'; 
-    db.query(sql, [req.body.id, req.body.name, req.body.email, req.body.flightId], (err, result) => {
+    db.query(sql, [id, email, flightId], (err, result) => {
         if (err) throw err;
         res.send('Passenger added successfully');
     });

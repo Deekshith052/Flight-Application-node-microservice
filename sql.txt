@@ -1,0 +1,30 @@
+create database airlinesdb;
+create database flightsdb;
+create database passengersdb;
+
+
+CREATE TABLE airline (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    numOfFlights INT NOT NULL
+);
+
+
+CREATE TABLE flight (
+    id INT PRIMARY KEY,
+    airlineId INT NOT NULL,
+    flightType VARCHAR(50) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    source VARCHAR(100) NOT NULL,
+    destination VARCHAR(100) NOT NULL
+);
+
+
+
+
+CREATE TABLE passenger (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    flightId INT NOT NULL
+);
